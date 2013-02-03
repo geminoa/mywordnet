@@ -58,18 +58,6 @@ class String
 		:src
 	)
 
-	def wn
-		ret_hash = []
-		get_mywords(self).each do |wd|
-			get_senses(wd).each do |sense|
-				sy = get_mysynset(sense.synset)
-				wd.synsets << sy
-			end
-			ret_hash << wd
-		end
-		return ret_hash
-	end
-
 	# 英語から日本語への変換
 	# 元の英語、日本語訳、類義語を返す
 	# # 結果の構造
