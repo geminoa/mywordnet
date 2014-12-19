@@ -290,7 +290,11 @@ class String
     get_link(link='ants')
   end
 
-  def sqlite3_version
+  #
+  # Wordnetのversionを返す
+  # 単語数にてversionを判定
+  #
+  def wn_version
     version_info = [
       {:ver => 1.1,  :words => 249121},
       {:ver => 1.0,  :words => 247528},
@@ -298,6 +302,8 @@ class String
       {:ver => 0.91, :words => 243433},
       {:ver => 0.90, :words => 241253}
     ]
+
+    # 単語数を取得
     if !@conn
       connect_db
     end
@@ -305,6 +311,7 @@ class String
     @conn.execute("select count(*) from word") {|r|
       cnt = r[0]
     }
+
     version_info.each do |ent|
       p cnt, ent
       if (cnt == ent[:words])
