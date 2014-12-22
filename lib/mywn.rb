@@ -1,63 +1,9 @@
 require 'rubygems'
 require 'sqlite3'
+require 'mywn_structs'
 
 class String
   $SQLITE3_DB = File.dirname(__FILE__) + "/wnjpn.db"
-
-  MyWord = Struct.new(
-    "MyWord",
-    :wordid,  # 単語ID
-    :lang,    # eng or jpn
-    :lemma,   # 見出し語
-    :pron,    # 発音
-    :pos,     # 品詞
-    :synsets 
-  )
-
-  MySynset = Struct.new(
-    "MySynset",
-    :pos,
-    :name,
-    :def,
-    :name_jp
-  )
-
-  Word = Struct.new(
-    "Word",
-    :wordid,
-    :lang,
-    :lemma,
-    :pron,
-    :pos
-  )
-
-  Sense = Struct.new(
-    "Sense",
-    :synset,
-    :wordid,
-    :lang,
-    :rank,
-    :lexid,
-    :freq,
-    :src
-  )
-
-  Synset = Struct.new(
-    "Synset",
-    :synset,
-    :pos,
-    :name,
-    :src
-  )
-
-  SynLink = Struct.new(
-    "SynLink",
-    :synset1,
-    :synset2,
-    :link,
-    :src
-  )
-
   # 英語から日本語への変換
   # 元の英語、日本語訳、類義語を返す
   # # 結果の構造
@@ -328,7 +274,7 @@ class String
     return nil
   end
 
-  # lemma(該当単語)から単語の情報を取得し、MyWordの配列として返す
+  # lemma(該当単語)から単語の情報を取得し、MyWord構造体の配列として返す
   def get_mywords(lemma)
     if !@conn
       connect_db
