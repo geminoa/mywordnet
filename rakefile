@@ -4,6 +4,17 @@ require 'rake/testtask'
 
 task :default => [:test]
 
+wordnet_uri = "http://nlpwww.nict.go.jp/wn-ja/data/1.1/wnjpn.db.gz"
+
+desc "init"
+task :init do
+  if Dir.glob("lib/wnjpn.db").size == 0
+    `curl -o wnjpn.db.gz #{wordnet_uri}`
+    `gunzip wnjpn.db.gz`
+    `mv wnjpn.db lib/`
+  end
+end
+
 Rake::TestTask.new do |test|
   # $LOAD_PATH へ追加('lib'は既に追加されている)
   test.libs << 'test'

@@ -3,15 +3,18 @@
 require "minitest/autorun"
 require "mywn"
 
-class TestJpn < MiniTest::Unit::TestCase
+class TestToJpn < MiniTest::Test
   def setup
-    @word = "dog"
+    @cat= "cat"
   end
 
-  # [TODO] メソッドの中身をちゃんと書く
-  def test_to_jpn
-    assert_equal @word, "dog"
+  def test_keys
+    assert_equal @cat.to_jpn.keys, [:jpns, :synonyms, :eng, :jpn]
   end
 
-  #[TODO] 他のメソッドのテストを追加
+  def test_synonyms
+    assert_equal @cat.to_jpn[:synonyms][0][:eng], "true_cat"
+    assert_equal @cat.to_jpn[:synonyms][0][:jpn].size, 5 
+    assert_equal @cat.to_jpn[:synonyms][0][:jpn].include?("猫"), true
+  end
 end

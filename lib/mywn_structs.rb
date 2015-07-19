@@ -9,7 +9,7 @@ MyWord = Struct.new(
   :synsets  # 類義語
 )
 
-MySynset = Struct.ew(
+MySynset = Struct.new(
   "MySynset",
   :pos,     # 品詞
   :name,
