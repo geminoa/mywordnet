@@ -8,7 +8,8 @@ class TestToEng < MiniTest::Test
     @neko = "猫"
   end
 
-  def test_keys
+  def test_to_eng
+    assert_kind_of Hash, @neko.to_eng
     assert_equal @neko.to_eng.keys, [:eng, :engs, :synonyms, :jpn]
   end
 

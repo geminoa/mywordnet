@@ -8,6 +8,10 @@ class TestWnAlso< MiniTest::Test
     @good = "good"
   end
 
+  def test_wn_also_class
+    assert_kind_of Array, @good.wn_also
+  end
+
   def test_word_match
     good_also = ["best",
       "better",

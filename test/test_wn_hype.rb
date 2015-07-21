@@ -10,6 +10,6 @@ class TestWnHype < MiniTest::Test
 
   def test_wn_hype
     assert_kind_of Array, @canid.wn_hype
-    assert_equal @canid.wn_hype, "carnivore"  # 肉食動物
+    assert_equal @canid.wn_hype, ["carnivore"]  # 肉食動物
   end
 end

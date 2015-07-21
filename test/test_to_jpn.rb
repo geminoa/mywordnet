@@ -8,7 +8,8 @@ class TestToJpn < MiniTest::Test
     @cat= "cat"
   end
 
-  def test_keys
+  def test_to_jpn
+    assert_kind_of Hash, @cat.to_jpn
     assert_equal @cat.to_jpn.keys, [:jpns, :synonyms, :eng, :jpn]
   end
 
