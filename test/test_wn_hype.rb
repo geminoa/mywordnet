@@ -3,6 +3,7 @@
 require "minitest/autorun"
 require "mywn"
 
+# Hypernym = 上位語
 class TestWnHype < MiniTest::Test
   def setup
     @canid = "canid"  # イヌ科動物
