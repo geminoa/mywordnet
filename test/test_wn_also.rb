@@ -3,7 +3,7 @@
 require "minitest/autorun"
 require "mywn"
 
-class TestWnAlso< MiniTest::Test
+class TestWnAlso < MiniTest::Test
   def setup
     @good = "good"
   end
@@ -13,7 +13,8 @@ class TestWnAlso< MiniTest::Test
   end
 
   def test_word_match
-    good_also = ["best",
+    good_also = [
+      "best",
       "better",
       "favourable",
       "good",
