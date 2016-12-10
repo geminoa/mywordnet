@@ -3,7 +3,7 @@ require 'sqlite3'
 require 'mywn_structs'
 
 class String
-  $SQLITE3_DB = File.dirname(__FILE__) + "/wnjpn.db"
+  $SQLITE3_DB = File.dirname(__FILE__) + "/../db/wnjpn.db"
   # 英語から日本語への変換
   # 元の英語、日本語訳、類義語を返す
   # # 結果の構造
