@@ -20,7 +20,7 @@ class String
   #         ...
   #       ]
   #     }   
-  def to_jpn
+  def to_jp
     ret_hash = {}
     ret_hash[:jpns] = []
     ret_hash[:synonyms] = []
@@ -67,7 +67,7 @@ class String
   #         ...
   #       ]
   #     }   
-  def to_eng
+  def to_en
     ret_hash = {}
     ret_hash[:eng] = []
     ret_hash[:engs] = []
