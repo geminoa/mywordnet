@@ -2,7 +2,7 @@
 
 require 'rake/testtask'
 
-wordnet_uri = "http://nlpwww.nict.go.jp/wn-ja/data/1.1/wnjpn.db.gz"
+wordnet_uri = "http://compling.hss.ntu.edu.sg/wnja/data/1.1/wnjpn.db.gz"
 db_path = "db"
 db_archive = "wnjpn.db.gz"
 db_name = "wnjpn.db"
